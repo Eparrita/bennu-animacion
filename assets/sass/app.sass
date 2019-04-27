@@ -1,0 +1,338 @@
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+img
+  max-width: 100%
+  display: block
+
+html
+  width: 100%
+  height: 100%
+  min-height: 100%
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 16px
+  line-height: 18px
+  overflow-x: hidden
+  background: #00b4db
+  background: -webkit-cubic-bezier(.8, 0, .2, 1)-gradient(to right, #0083b0, #00b4db)
+  background: cubic-bezier(.8, 0, .2, 1)-gradient(to right, #0083b0, #00b4db)
+body
+  width: 100%
+  min-height: 100% 
+
+p
+  display: block
+  margin: 5px
+h2
+  display: block
+  text-align: justify
+  margin: 10px 5px
+
+.container-animation, .container
+  width: 95%
+  position: relative
+  margin: 0 auto
+  overflow: hidden
+  
+//eje de rotacion
+.axis, .rotate-search-top, .rotate-search-bottom, .rotate-search-bottom-reverse, .rotate-home-bottom, .rotate-home-reverse
+  width: 100%
+  min-height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  display: inline-block
+//iconos
+.phone
+  position: absolute
+  top: 0
+  left: 0
+  margin: 35.2112% 0 0 35.2112%
+  width: 27.7665%
+  z-index: 9999
+  cursor: pointer
+.search
+  position: absolute
+  top: 0
+  left: 0
+  margin: 22.9% 0 0 19.5171%
+  width: 21.1267%
+  height: 21.1267%
+  cursor: pointer
+  z-index: 999
+  &::after
+    content: ""
+    width: 100%
+    height: 58.682%
+    position: absolute
+    top: 0
+    left: 0
+    margin: 56.3199% 0px 0 61%
+    background: url('../images/front-end_enganche.png') no-repeat
+    background-size: contain
+    z-index: -1
+
+.home
+  position: absolute
+  top: 0
+  right: 0
+  margin: 7.0603% 13.9537% 0 0
+  width: 34.8088%
+  height: 34.8088%
+  z-index: 999
+  cursor: pointer
+  animation: rotate-home 
+  transform-origin: reverse
+  &::after
+    content: ""
+    width: 37.676%
+    height: 54.682%
+    position: absolute
+    top: 0
+    left: 0
+    margin: 73.3199% 0px 0 2px
+    background: url('../images/front-end_enganche-right.png') no-repeat
+    background-size: contain
+    z-index: -1
+    
+/*Animaciones*/
+.rotate-search-top
+  animation: rotate-search-top 1s cubic-bezier(.54, 0, .57, 1)
+  transform-origin: center center
+  transform: rotate(42deg)
+  display: inline-block
+  z-index: 999
+  
+@keyframes rotate-search-top
+  0%
+    transform: rotate(0)
+    transition: 1s all
+    transition-property: transform
+  100%
+    transform: rotate(42deg)
+    transition: 1s all
+    transition-property: transform
+
+.end-search-top
+  animation: rotate-icon-home .3s cubic-bezier(.54, 0, .57, 1)
+  transform: rotate(-42deg)
+
+@keyframes rotate-icon-home
+  0%
+    transform: rotate(0)
+    transition: 1s all
+    transition-property: transform
+  100%
+    transform: rotate(-42deg)
+    transition: 1s all
+    transition-property: transform
+
+.rotate-search-bottom
+  animation: rotate-search-bottom .3s cubic-bezier(.8, 0, .2, 1)
+  transform: rotate(-90deg)
+  transform-origin: center center
+  margin: -2% 0 0 -1%
+  z-index: 999
+  
+@keyframes rotate-search-bottom
+  0%
+    transform: rotate(0deg)
+    margin: 0
+    transition: 1s all
+    transition-property: margin, transform
+  100%
+    transform: rotate(-90deg)
+    margin: -2% 0 0 -1%
+    transition: 1s all
+    transition-property: margin, transform
+
+.end-search-bottom
+  animation: rotate-icon-home .3s cubic-bezier(.54, 0, .57, 1)
+  transform: rotate(90deg)
+
+@keyframes rotate-icon-home
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(90deg)
+
+.rotate-search-bottom-reverse
+  animation: rotate-search-top 1s cubic-bezier(.54, 0, .57, 1)
+  transform-origin: center center
+  transform: rotate(42deg)
+  display: inline-block
+  z-index: 999
+  
+@keyframes rotate-search-bottom-reverse
+  0%
+    transform: rotate(-90deg)
+    transition: 1s all
+    transition-property: transform
+  100%
+    transform: rotate(42deg)
+    transition: 1s all
+    transition-property: transform
+
+.end-search-bottom-reverse
+  animation: rotate-icon-home .3s cubic-bezier(.54, 0, .57, 1)
+  transform: rotate(-42deg)
+
+@keyframes rotate-icon-home
+  0%
+    transform: rotate(-90deg)
+    transition: 1s all
+    transition-property: transform
+  100%
+    transform: rotate(-42deg)
+    transition: 1s all
+    transition-property: transform
+
+.rotate-home-bottom
+  right: 0
+  margin: -1% -0.8%
+  animation: rotate-home .8s cubic-bezier(.54, 0, .57, 1)
+  transform-origin: center center
+  transform: rotate(80deg)
+  z-index: 999
+@keyframes rotate-home
+  0%
+    transform: rotate(0)
+    margin: 0
+    transition: 1s all
+    transition-property: margin, transform
+
+  100%
+    transform: rotate(80deg)
+    margin: -1% -0.8%
+    transition: 1s all
+    transition-property: margin, transform
+
+.rotate-icon-home
+  animation: rotate-icon-home .4s cubic-bezier(.54, 0, .57, 1)
+  transform: rotate(-80deg)
+
+@keyframes rotate-icon-home
+  0%
+    transform: rotate(0deg)
+    transition: 1s all
+    transition-property: transform
+  100%
+    transform: rotate(-80deg)
+    transition: 1s all
+    transition-property: transform
+
+.rotate-home-reverse
+  right: 0
+  margin: 0
+  animation: rotate-home-reverse .8s cubic-bezier(.54, 0, .57, 1)
+  transform-origin: center center
+  transform: rotate(0deg)
+
+@keyframes rotate-home-reverse
+  0%
+    transform: rotate(80deg)
+    margin: -1% -0.8%
+    transition: 1s all
+    transition-property: margin, transform
+
+  100%
+    transform: rotate(0deg)
+    margin: 0
+    transition: 1s all
+    transition-property: margin, transform
+
+
+.content-api
+  padding: 1%
+  display: block
+  width: 100%
+  margin: 0 auto
+  display: block
+  visibility: hidden
+
+.content-api-animation
+  background: rgba(255,255,255,.90)
+  animation: content 3s cubic-bezier(.8, 0, .2, 1)
+  opacity: 1
+  transition-delay: 1s
+  visibility: visible
+@keyframes content
+  0%
+    opacity: 0
+    transition: 1s
+  100%
+    opacity: 1
+    transition: 1s all
+    transition-property: opacity
+
+#title-search, #body-search, #title-home, #body-home
+  display: none
+  transition: .5s all
+//iconos titulos
+.icon img
+  width: 30%
+  margin: 0 auto
+.icon-search, .icon-home 
+  display: none
+.circles
+  position: absolute
+  top: 0
+  right: 0
+  margin: -2.6137% 26.7162% 0 0
+  width: 27.1629%
+  display: none
+  animation: circles 1s cubic-bezier(.8, 0, .2, 1)
+  opacity: 1
+  transition-delay: 2s
+@keyframes circles
+  0%
+    opacity: 0
+    transition: 1s
+    transition-property: opacity
+  75%
+    opacity: 0
+    transition: 1s
+    transition-property: opacity
+  100%
+    opacity: 1
+    transition: 1s 
+    transition-property: opacity
+.menu-circles
+  position: relative
+  width: 100%
+  li
+    list-style: none
+    width: 20%
+.li-1
+  position: absolute
+  top: 0
+  left: 0
+  margin: 50% 4%
+.li-2
+  position: absolute
+  top: 0
+  left: 0
+  margin: 26% 23%
+.li-3
+  position: absolute
+  top: 0
+  left: 0
+  margin: 14% 48%
+.li-4
+  position: absolute
+  top: 0
+  left: 0
+  margin: 10% 76%
+
+  
+@media only screen and (min-width:769px)
+  .container-animation
+    width: 100%
+    max-width: 600px
+  .container
+    width: 100%
+    max-width: 800px
+  
+  
